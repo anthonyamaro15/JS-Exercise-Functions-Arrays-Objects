@@ -264,23 +264,6 @@ function getOlderCars(array, year) {
   return result;
 }
 
-// console.log(
-//   getOlderCars(
-//     [
-//       { id: 1, car_make: "Lincoln", car_model: "Navigator", car_year: 2009 },
-//       { id: 2, car_make: "Mazda", car_model: "Miata MX-5", car_year: 2001 },
-//       {
-//         id: 3,
-//         car_make: "Land Rover",
-//         car_model: "Defender Ice Edition",
-//         car_year: 2010
-//       },
-//       { id: 4, car_make: "Honda", car_model: "Accord", car_year: 1983 }
-//     ],
-//     2000
-//   )
-// );
-
 /**
  * ### Challenge `getGermanCars`
  *
@@ -292,8 +275,20 @@ function getOlderCars(array, year) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
  */
-function getGermanCars(/* code here */) {
+function getGermanCars(array) {
   /* code here */
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    if (
+      array[i].car_make === "Audi" ||
+      array[i].car_make === "Mercedes-Benz" ||
+      array[i].car_make === "Volkswagen" ||
+      array[i].car_make === "BMW"
+    ) {
+      result.push(array[i]);
+    }
+  }
+  return result;
 }
 
 /**
