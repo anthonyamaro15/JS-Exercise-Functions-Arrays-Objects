@@ -203,25 +203,20 @@ function getCarInfoById(array, id) {
 function sortCarInventory(array) {
   /* code here */
   let arr = [...array];
-  let carModel = [];
-  for (let i = 0; i < arr.length; i++) {
-    //  console.log(arr[i].car_model);
-  }
-}
+  let carModel = arr.sort((a, b) => {
+    let one = a.car_model.toLowerCase();
+    let two = b.car_model.toLowerCase();
 
-// console.log(
-//   sortCarInventory([
-//     { id: 1, car_make: "Lincoln", car_model: "Navigator", car_year: 2009 },
-//     { id: 2, car_make: "Mazda", car_model: "Miata MX-5", car_year: 2001 },
-//     {
-//       id: 3,
-//       car_make: "Land Rover",
-//       car_model: "Defender Ice Edition",
-//       car_year: 2010
-//     },
-//     { id: 4, car_make: "Honda", car_model: "Accord", car_year: 1983 }
-//   ])
-// );
+    if (one < two) {
+      return -1;
+    }
+    if (one > two) {
+      return 1;
+    }
+    return 0;
+  });
+  return carModel;
+}
 
 /**
  * ### Challenge `getModelYears`
@@ -309,9 +304,9 @@ function getGermanCars(array) {
  *   return num * 2
  * }
  */
-const sum = null; // code here!
-const addFive = null; // code here!
-const argTimesTwo = null; // code here!
+const sum = (a, b) => a + b;
+const addFive = num => num + 5;
+const argTimesTwo = num => num * 2;
 
 /**
  * ### Challenge `carMaker`
