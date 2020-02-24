@@ -149,6 +149,8 @@ function get3rdCar(inventory) {
  */
 function getCarInfoByIndex(inventory, index) {
   /* code here */
+  const obj = inventory[index];
+  return `This is a ${obj.car_make} ${obj.car_model}`;
 }
 
 /**
